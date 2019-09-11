@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './Components/Home/Home';
+import Products from './Components/Home/Products';
+import Cart from './Components/Cart/Cart';
+import Default from './Components/Default';
+import NavBar from './Components/Navbar';
+
 import './App.css';
+import ModalGrid from './Components/ModalGrid';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/products" component={Products} />
+        <Route path="/cart" component={Cart} />
+        <Route component={Default} />
+      </Switch>
+      <ModalGrid />
+    </React.Fragment>
   );
 }
 
