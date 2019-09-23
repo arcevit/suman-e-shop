@@ -26,7 +26,7 @@ class ProductProvider extends Component {
     });
     this.setState(() => {
       return { products: temProducts };
-    }, this.checkCartItems);
+    });
   };
 
   getItem = id => {
