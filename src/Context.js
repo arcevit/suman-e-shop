@@ -9,7 +9,6 @@ class ProductProvider extends Component {
     detailProduct: detailProduct,
     cart: [],
     modalOpen: false,
-    modalProduct: detailProduct,
     cartSubTotal: 0,
     cartTax: 0,
     cartTotal: 0
@@ -26,7 +25,7 @@ class ProductProvider extends Component {
     });
     this.setState(() => {
       return { products: temProducts };
-    }, this.checkCartItems);
+    });
   };
 
   getItem = id => {
@@ -60,7 +59,7 @@ class ProductProvider extends Component {
   openModal = id => {
     const product = this.getItem(id);
     this.setState(() => {
-      return { modalProduct: product, modalOpen: true };
+      return { detailProduct: product, modalOpen: true };
     });
   };
   closeModal = () => {
