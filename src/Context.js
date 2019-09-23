@@ -114,18 +114,13 @@ class ProductProvider extends Component {
   };
   addTotals = () => {
     const totals = this.getTotals();
-    this.setState(
-      () => {
-        return {
-          cartSubTotal: totals.subTotal,
-          cartTax: totals.tax,
-          cartTotal: totals.total
-        };
-      },
-      () => {
-        // console.log(this.state);
-      }
-    );
+    this.setState(() => {
+      return {
+        cartSubTotal: totals.subTotal,
+        cartTax: totals.tax,
+        cartTotal: totals.total
+      };
+    });
   };
   removeItem = id => {
     let tempProducts = [...this.state.products];
